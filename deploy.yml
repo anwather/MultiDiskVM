@@ -10,7 +10,7 @@ steps:
   inputs: 
     azureSubscription: ${{ parameters.azureSubscription }}
     inlineScript: |
-      az bicep build --files bicepdeploy.json
+      az bicep build --file bicepdeploy.json
     scriptLocation: inlineScript
     scriptType: bash
 - task: AzurePowerShell@5 
