@@ -16,6 +16,6 @@ steps:
 - task: AzurePowerShell@5 
   displayName: 'Deploy Template'
   inputs: 
-    azureSubscription: ''
+    azureSubscription: ${{ parameters.azureSubscription }}
     Inline: |
       .\deploy.ps1 -DeploymentFile .\server1.json -TemplateFile .\bicepdeploy.json
