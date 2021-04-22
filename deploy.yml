@@ -1,10 +1,14 @@
 trigger: none
 
+parameters:
+  - name: azureSubscription
+    type: string
+
 steps:
 - task: AzureCLI@2
   displayName: 'Convert Bicep File to ARM template'
   inputs: 
-    azureSubscription: ''
+    azureSubscription: ${{ parameters.azureSubscription }}
     inlineScript: |
       az bicep build bicepdeploy.json
     scriptType: bash
