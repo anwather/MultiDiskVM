@@ -11,6 +11,7 @@ steps:
     azureSubscription: ${{ parameters.azureSubscription }}
     inlineScript: |
       az bicep build bicepdeploy.json
+    scriptLocation: inlineScript
     scriptType: bash
 - task: AzurePowerShell@5 
   displayName: 'Deploy Template'
