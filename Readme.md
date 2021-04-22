@@ -21,5 +21,5 @@ Fill out the details as similar to below ensuring that the number of data disks 
 Deploy using :
 
 ```
-.\deploy.ps1 -DeploymentFile .\server1.json
+.\deploy.ps1 -DeploymentFile .\server1.json -TemplateFile .\azuredeploy.json
 ```

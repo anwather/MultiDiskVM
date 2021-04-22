@@ -1,0 +1,16 @@
+trigger: none
+
+steps:
+- task: AzureCLI@2
+  displayName: 'Convert Bicep File to ARM template'
+  inputs: 
+    azureSubscription: ''
+    inlineScript: |
+      az bicep build bicepdeploy.json
+    scriptType: bash
+- task: AzurePowerShell@5 
+  displayName: 'Deploy Template'
+  inputs: 
+    azureSubscription: ''
+    Inline: |
+      .\deploy.ps1 -DeploymentFile .\server1.json -TemplateFile .\bicepdeploy.json

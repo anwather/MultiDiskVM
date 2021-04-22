@@ -1,4 +1,4 @@
-Param($DeploymentFile)
+Param($DeploymentFile, $TemplateFile)
 
 New-AzResourceGroup -Name deploy -Location 'Australia East' -Force
 
@@ -11,4 +11,4 @@ $params = @{
     diskSizeArray      = $inputFile.sizeOfDisks
 }
 
-New-AzResourceGroupDeployment -ResourceGroupName deploy -TemplateFile .\azuredeploy.json -TemplateParameterObject $params -Verbose
+New-AzResourceGroupDeployment -ResourceGroupName deploy -TemplateFile $TemplateFile -TemplateParameterObject $params -Verbose
