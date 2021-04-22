@@ -1,0 +1,9 @@
+{
+    "computerName": "server1",
+    "virtualNetworkName": "vnet01",
+    "numberOfDisks": 2,
+    "sizeOfDisks": [
+        "30",
+        "50"
+    ]
+}
